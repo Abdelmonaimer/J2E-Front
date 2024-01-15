@@ -1,0 +1,46 @@
+<!-- taxetnb.component.html -->
+<div class="container">
+  <h2 class="my-5">TaxeTNBs for Terrain</h2>
+  <table class="table">
+    <thead>
+    <tr class="text-center">
+      <th>ID</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Montant</th>
+      <th>TNB Year</th>
+      <th>Paid</th>
+      <th>Actions</th>
+      <!-- Add more headers as needed -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let taxeTnb of taxeTnbs" class="text-center">
+      <td>{{ taxeTnb.id }}</td>
+      <td>{{ taxeTnb.label }}</td>
+      <td>{{ taxeTnb.description }}</td>
+      <td>{{ taxeTnb.montant }}</td>
+      <td>{{ taxeTnb.tnbYear }}</td>
+      <td>{{ taxeTnb.paid ? 'Yes' : 'No' }}</td>
+      <td>
+        <button
+          [disabled]="taxeTnb.paid"
+          *ngIf="!taxeTnb.paid"
+          class="btn btn-outline-info"
+          (click)="payTaxeTNB(taxeTnb)"
+        >
+          Pay
+        </button>
+        <button
+          [disabled]="taxeTnb.paid"
+          *ngIf="taxeTnb.paid"
+          class="btn btn-outline-info"
+        >
+          Paid
+        </button>
+      </td>
+      <!-- Add more cells as needed -->
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,29 @@
+<!-- terrains.component.html -->
+
+<div class="container">
+  <h2 class="my-5">Terrains</h2>
+  <table class="table">
+    <thead>
+    <tr class="text-center">
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Surface</th>
+      <th>Categorie</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let terrain of terrains" class="text-center">
+      <td>{{ terrain.id }}</td>
+      <td>{{ terrain.nom }}</td>
+      <td>{{ terrain.description }}</td>
+      <td>{{ terrain.surface }}</td>
+      <td>{{ terrain.categorie?.libelle }}</td>
+      <td>
+        <button (click)="navigateToTaxeTnb(terrain.nom)" class="btn btn-outline-info">Details</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

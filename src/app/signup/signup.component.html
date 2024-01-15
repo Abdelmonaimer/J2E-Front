@@ -1,0 +1,40 @@
+<!-- signup.component.html -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card p-5">
+        <div class="card-body">
+          <div class="card-title text-center mb-5"><h2 class="mb-4">Sign Up</h2></div>
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <!-- Add other form fields as needed -->
+            <div class="my-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="nom" formControlName="nom" required>
+            </div>
+            <div class="mb-3">
+              <label for="prenom" class="form-label">Prenom</label>
+              <input type="text" class="form-control" id="prenom" formControlName="prenom" required>
+            </div>
+            <div class="mb-3">
+              <label for="cin" class="form-label">CIN</label>
+              <input type="text" class="form-control" id="cin" formControlName="cin" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

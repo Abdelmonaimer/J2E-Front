@@ -1,0 +1,35 @@
+<div class="container">
+  <h2 class="my-5">Taux</h2>
+
+  <div class="my-5">
+    <div class="row">
+      <div class="col-3">
+        <label for="categoryFilter">Filter by Category:</label>
+      </div>
+      <div class="col-7">
+        <input type="text" id="categoryFilter" class="form-control" [(ngModel)]="selectedCategory" placeholder="Enter category">
+
+      </div>
+      <div class="col-2">
+        <button class="btn btn-outline-success" (click)="filterByCategory()">Filter</button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr class="text-center">
+      <th>ID</th>
+      <th>Montant</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let taux of tauxList" class="text-center">
+      <td>{{ taux.id }}</td>
+      <td>{{ taux.montant }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
